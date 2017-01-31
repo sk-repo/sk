@@ -1,4 +1,4 @@
-package br.sk.internal;
+package br.sk.internal.config;
 
 import javax.validation.constraints.NotNull;
 
