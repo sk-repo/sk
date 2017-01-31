@@ -11,9 +11,10 @@ public class Action implements Comparable<Action> {
 
 	private FileReader actionFileReader;
 
-	public Action(Path path) {
+	public Action(Path path, FileReader actionFileReader) {
 		super();
 		this.path = path;
+		this.actionFileReader = actionFileReader;
 	}
 
 	public String getName() {

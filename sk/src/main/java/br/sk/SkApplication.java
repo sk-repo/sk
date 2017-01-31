@@ -22,6 +22,6 @@ public class SkApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... arg0) throws Exception {
-		actionLoader.loadAll();
+		actionLoader.loadFromRepo();
 	}
 }
