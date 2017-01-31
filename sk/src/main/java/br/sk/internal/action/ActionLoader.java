@@ -12,6 +12,8 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -36,13 +38,18 @@ public class ActionLoader implements Serializable {
 	private SkConfig skConfig;
 
 	private SortedSet<Action> actions;
+	
+	@PostConstruct
+	public void init() throws IOException {
+		this.loadFromRepo();
+	}
 
 	/**
 	 * Carrega todos as actions de {@link SkConfig#getActionRepo()}
 	 * 
 	 * @throws IOException
 	 */
-	public void loadFromRepo() throws IOException {
+	private void loadFromRepo() throws IOException {
 		if (isValidActionsPath()) {
 			//// @formatter:off
 			this.actions = Files.list(Paths.get(skConfig.getActionRepo()))

@@ -6,6 +6,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import br.sk.internal.action.ActionDispatcher;
 import br.sk.internal.action.ActionLoader;
 
 @SpringBootApplication
@@ -13,6 +14,9 @@ public class SkApplication implements CommandLineRunner {
 
 	@Autowired
 	private ActionLoader actionLoader;
+
+	@Autowired
+	private ActionDispatcher actionDispatcher;
 
 	public static void main(String[] args) {
 		AnsiConsole.systemInstall();
@@ -22,6 +26,8 @@ public class SkApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... arg0) throws Exception {
-		actionLoader.loadFromRepo();
+		while (true) {
+			actionDispatcher.dispatch();
+		}
 	}
 }
