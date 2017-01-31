@@ -44,7 +44,7 @@ public class ActionLoader implements Serializable {
 			//// @formatter:off
 			this.actions = Files.list(Paths.get(skConfig.getActionsPath()))
 					.filter(Files::isDirectory)
-					.filter(this::hasActionJS)
+					.filter(this::hasActionJSFile)
 					.map(Action::new)
 					.collect(Collectors.toCollection(TreeSet::new));
 			// @formatter:on
@@ -58,7 +58,7 @@ public class ActionLoader implements Serializable {
 		return Files.exists(Paths.get(skConfig.getActionsPath()));
 	}
 	
-	private boolean hasActionJS(Path path) {
+	private boolean hasActionJSFile(Path path) {
 		try {
 			return Files.list(path).anyMatch(p -> p.toString().equals("action.js"));
 		} catch (IOException e) {
