@@ -14,7 +14,7 @@ public class SkConfig {
 	private String workspace;
 
 	@Value("#{environment['HOME']}/git/sk-actions")
-	private String actionsPath;
+	private String actionRepo;
 
 	public String getWorkspace() {
 		return workspace;
@@ -24,11 +24,12 @@ public class SkConfig {
 		this.workspace = workspace;
 	}
 
-	public String getActionsPath() {
-		return actionsPath;
+	public String getActionRepo() {
+		return actionRepo;
 	}
 
-	public void setActionsPath(String actionsPath) {
-		this.actionsPath = actionsPath;
+	public void setActionRepo(String actionRepo) {
+		this.actionRepo = actionRepo;
 	}
+
 }

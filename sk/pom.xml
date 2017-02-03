@@ -49,12 +49,6 @@
 			<groupId>org.hibernate</groupId>
 		</dependency>
 
-		<dependency>
-			<groupId>br.sk.api</groupId>
-			<artifactId>sk-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
 	</dependencies>
 
 	<build>
