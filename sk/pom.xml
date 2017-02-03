@@ -49,6 +49,12 @@
 			<groupId>org.hibernate</groupId>
 		</dependency>
 
+		<dependency>
+			<groupId>br.sk.io</groupId>
+			<artifactId>sk-io</artifactId>
+			<version>1.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
